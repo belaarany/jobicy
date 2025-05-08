@@ -2,6 +2,7 @@ import { Card, Typography } from "antd";
 import { EyeOutlined } from "@ant-design/icons";
 
 import { Job } from "@/types/Job";
+import { decodeHtml } from "@/utils/decodeHtml";
 
 type JobCardProps = {
   job: Job;
@@ -33,10 +34,10 @@ export default function JobCard({ job }: JobCardProps) {
         description={
           <>
             <Typography.Text type="secondary">
-              {job.companyName}
+              {decodeHtml(job.companyName)}
             </Typography.Text>
             <Typography.Paragraph ellipsis={{ rows: 3 }}>
-              {job.jobExcerpt}
+              {decodeHtml(job.jobExcerpt)}
             </Typography.Paragraph>
             <Typography.Text type="secondary">
               Type: {job.jobType} | Level: {job.jobLevel}
