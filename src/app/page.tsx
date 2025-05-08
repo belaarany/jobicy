@@ -7,7 +7,7 @@ import JobFilters from "./components/JobFilters";
 import JobList from "./components/JobList";
 import { Filters } from "./types/Filters";
 
-export default function JobsPage() {
+export default function RootPage() {
   const [filters, setFilters] = useState<Filters>({
     location: null,
     industry: null,
